@@ -1,0 +1,50 @@
+:root {
+  --pink: #ffd6e0;
+  --pink-deep: #ff8fab;
+  --cream: #fff8f0;
+  --brown: #8b5e3c;
+  --ink: #3d2b2b;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Trebuchet MS", "Comic Sans MS", system-ui, sans-serif;
+  background: linear-gradient(180deg, var(--cream), var(--pink));
+  color: var(--ink);
+  min-height: 100vh;
+}
+a { color: inherit; text-decoration: none; }
+.container { max-width: 880px; margin: 0 auto; padding: 24px 20px 80px; }
+h1 { font-size: clamp(2rem, 6vw, 3.2rem); color: var(--pink-deep); text-align: center; }
+h2 { color: var(--brown); margin-bottom: 12px; }
+.sub { text-align: center; margin: 8px 0 24px; font-size: 1.1rem; }
+.card {
+  background: #fff; border-radius: 24px; padding: 22px;
+  box-shadow: 0 8px 24px rgba(255, 143, 171, 0.25);
+  margin-bottom: 18px;
+}
+.nav {
+  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+  padding: 16px; background: rgba(255,255,255,0.7); backdrop-filter: blur(6px);
+  position: sticky; top: 0; z-index: 10;
+}
+.nav a { padding: 8px 16px; border-radius: 999px; font-weight: bold; }
+.nav a:hover { background: var(--pink); }
+.nav a.active { background: var(--pink-deep); color: #fff; }
+.btn {
+  background: var(--pink-deep); color: #fff; border: none; border-radius: 999px;
+  padding: 12px 26px; font-size: 1rem; font-weight: bold; cursor: pointer;
+  transition: transform .15s;
+}
+.btn:hover { transform: scale(1.06); }
+.center { text-align: center; }
+.bears { display: flex; justify-content: center; align-items: flex-end; gap: 8px; margin: 12px 0; }
+.bear-couple { display: block; max-width: 100%; height: auto; animation: bob 2.4s ease-in-out infinite; }
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.counter { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.counter div { background: #fff; border-radius: 20px; padding: 14px 20px; text-align: center; min-width: 90px; box-shadow: 0 6px 18px rgba(255,143,171,.25); }
+.counter strong { display: block; font-size: 2rem; color: var(--pink-deep); }
+.timeline { border-left: 4px dashed var(--pink-deep); padding-left: 20px; }
+.timeline .card small { color: var(--pink-deep); font-weight: bold; }
+.letter p { margin-bottom: 14px; line-height: 1.8; font-size: 1.1rem; }
+.floating-heart { position: fixed; bottom: 0; font-size: 2rem; animation: rise 3s ease-out forwards; pointer-events: none; }
+@keyframes rise { to { transform: translateY(-90vh); opacity: 0; } }
